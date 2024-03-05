@@ -396,6 +396,54 @@ If you encounter the following error while running the project, deactivate the v
     . . .
     ModuleNotFoundError: No module named 'sqlalchemy'
 
+---
+
+
+
+
+
+### &#x1F31F; CURL : 
+
+- book [create book]
+
+        curl --location 'http://localhost:8000/book/create' \
+        --header 'Content-Type: application/json' \
+        --data '{
+            "parameter":{
+                "title":"The Book of War",
+                "description": "Two classic works of military strategy that shaped the way we think about warfare"
+            }
+        }'
+
+- book [get all book]
+
+        curl --location 'http://localhost:8000/book/'
+
+
+- book [get by id book]
+
+        curl --location 'http://localhost:8000/book/35'
+
+- book [update book]
+
+        curl --location --request PATCH 'http://localhost:8000/book/update' \
+        --header 'Content-Type: application/json' \
+        --data '{
+            "parameter":{
+                "id": 35,
+                "title":"The Book of War 2",
+                "description": "Two classic works of military strategy that shaped the way we think about warfare"
+            }
+        }'
+
+- book [delete book]
+
+        curl --location --request DELETE 'http://localhost:8000/book/35'
+
+
+
+
+---
 
 
 <p align="center">
