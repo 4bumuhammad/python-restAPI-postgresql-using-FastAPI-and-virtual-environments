@@ -134,9 +134,21 @@ install some necessary packages (test with another version / 2023) --> FAILED
 
     ❯ pip install flask==3.0.0    
 
-install some necessary packages (test with another version of fastapi / Jul 8, 2023) --> SUCCESSFUL
+install some necessary packages (test with another version of fastapi) --> SUCCESSFUL | &#x2705; RECOMMANDED VERSION
 
-    ❯ pip install uvicorn==0.27.1 fastapi==0.100.1    
+    ❯ pip install uvicorn==0.27.1 fastapi==0.99.1    
+
+        notes : [fastapi] There are bugs in later versions of fastapi, so it is recommended to use this version or a level not further below it.
+
+    ❯ pip install SQLAlchemy==2.0.28
+
+    ❯ pip install psycopg2==2.9.9
+
+    ❯ pip install flask==3.0.2
+
+install some necessary packages (test with another version of fastapi) --> TEST 
+
+    ❯ pip install uvicorn==0.27.1 fastapi==0.100.0    
 
         notes : [fastapi] There are bugs in later versions of fastapi, so it is recommended to use this version or a level not further below it.
 
