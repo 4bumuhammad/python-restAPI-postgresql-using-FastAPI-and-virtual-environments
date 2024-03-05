@@ -427,7 +427,7 @@ If you encounter the following error while running the project, deactivate the v
 
 ### &#x1F31F; CURL : 
 
-- book [create book]
+- &#x1F536; book [create book]
 
         curl --location 'http://localhost:8000/book/create' \
         --header 'Content-Type: application/json' \
@@ -438,16 +438,16 @@ If you encounter the following error while running the project, deactivate the v
             }
         }'
 
-- book [get all book]
+- &#x1F536; book [get all book]
 
         curl --location 'http://localhost:8000/book/'
 
 
-- book [get by id book]
+- &#x1F536; book [get by id book]
 
         curl --location 'http://localhost:8000/book/35'
 
-- book [update book]
+- &#x1F536; book [update book]
 
         curl --location --request PATCH 'http://localhost:8000/book/update' \
         --header 'Content-Type: application/json' \
@@ -459,7 +459,7 @@ If you encounter the following error while running the project, deactivate the v
             }
         }'
 
-- book [delete book]
+- &#x1F536; book [delete book]
 
         curl --location --request DELETE 'http://localhost:8000/book/35'
 
