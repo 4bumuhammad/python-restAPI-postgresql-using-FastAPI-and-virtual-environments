@@ -118,7 +118,7 @@ install some necessary packages (test with another version of fastapi) --> SUCCE
 
     ❯ pip install uvicorn==0.27.1 fastapi==0.99.1    
 
-        notes : [fastapi] There are bugs in later versions of fastapi, 
+        notes : [fastapi] There is a lack of support for newer versions of fastapi, 
         so it is recommended to use this version or a level not further below it.
 
     ❯ pip install SQLAlchemy==2.0.28
@@ -383,6 +383,8 @@ Basic project.
 
 #### &#x1F3C4; Run project
 
+Here are the results of running the project if using the latest version or from a non-recommended version of fastapi
+
         ❯ uvicorn main:app --reload
 
             INFO:     Will watch for changes in these directories: ['/Users/.../python-restAPI-postgresql-using-FastAPI-and-virtual-environments/1-fastapi-postgresql/app']
@@ -397,6 +399,18 @@ Basic project.
             INFO:     Waiting for application startup.
             INFO:     Application startup complete.
 
+---
+
+Here are the results of running the project if using the recommended version of fastapi &#x2705; .
+
+        ❯ uvicorn main:app --reload
+
+            INFO:     Will watch for changes in these directories: ['/Users/.../python-restAPI-postgresql-using-FastAPI-and-virtual-environments/1-fastapi-postgresql/app']
+            INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+            INFO:     Started reloader process [95230] using StatReload
+            INFO:     Started server process [95232]
+            INFO:     Waiting for application startup.
+            INFO:     Application startup complete.
 
 &#x1FAA7; notes :
 
