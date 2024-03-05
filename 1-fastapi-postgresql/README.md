@@ -130,33 +130,33 @@ install some necessary packages (test with another version of fastapi) --> SUCCE
 
 ---
 
-notes : 
+&#x1FAA7; notes : 
 
     ❯ pip list
 
         Package           Version
         ----------------- -------
         anyio             4.3.0
+        blinker           1.7.0
         click             8.1.7
         exceptiongroup    1.2.0
-        fastapi           0.88.0
-        Flask             2.2.2
+        fastapi           0.99.1
+        Flask             3.0.2
         h11               0.14.0
         idna              3.6
         itsdangerous      2.1.2
         Jinja2            3.1.3
         MarkupSafe        2.1.5
         pip               22.0.4
-        psycopg2          2.9.5
+        psycopg2          2.9.9
         pydantic          1.10.14
         setuptools        58.1.0
         sniffio           1.3.1
-        SQLAlchemy        1.4.45
-        starlette         0.22.0
+        SQLAlchemy        2.0.28
+        starlette         0.27.0
         typing_extensions 4.10.0
-        uvicorn           0.20.0
+        uvicorn           0.27.1
         Werkzeug          3.0.1
-
 
 build a project folder and its files.
 
@@ -385,24 +385,10 @@ Basic project.
 
         ❯ uvicorn main:app --reload
 
-            INFO:     Will watch for changes in these directories: ['/Users/.../python-restAPI-postgresql-using-FastAPI-and-virtualenv/1-fastapi-postgresql/app']
-            INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
-            INFO:     Started reloader process [5361] using StatReload
-            /Users/.../python-restAPI-postgresql-using-FastAPI-and-virtualenv/venv/lib/python3.10/site-packages/pydantic/_migration.py:283: UserWarning: `pydantic.generics:GenericModel` has been moved to `pydantic.BaseModel`.
-            warnings.warn(f'`{import_path}` has been moved to `{new_location}`.')
-            /Users/.../python-restAPI-postgresql-using-FastAPI-and-virtualenv/venv/lib/python3.10/site-packages/pydantic/_internal/_config.py:322: UserWarning: Valid config keys have changed in V2:
-            * 'orm_mode' has been renamed to 'from_attributes'
-            warnings.warn(message, UserWarning)
-            INFO:     Started server process [5363]
-            INFO:     Waiting for application startup.
-            INFO:     Application startup complete.
-
----
-
             INFO:     Will watch for changes in these directories: ['/Users/.../python-restAPI-postgresql-using-FastAPI-and-virtual-environments/1-fastapi-postgresql/app']
             INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
             INFO:     Started reloader process [14386] using StatReload
-            /Users/.../from-github-all/python-restAPI-postgresql-using-FastAPI-and-virtual-environments/venv/lib/python3.10/site-packages/pydantic/_migration.py:283: UserWarning: `pydantic.generics:GenericModel` has been moved to `pydantic.BaseModel`.
+            /Users/.../python-restAPI-postgresql-using-FastAPI-and-virtual-environments/venv/lib/python3.10/site-packages/pydantic/_migration.py:283: UserWarning: `pydantic.generics:GenericModel` has been moved to `pydantic.BaseModel`.
             warnings.warn(f'`{import_path}` has been moved to `{new_location}`.')
             /Users/.../python-restAPI-postgresql-using-FastAPI-and-virtual-environments/venv/lib/python3.10/site-packages/pydantic/_internal/_config.py:322: UserWarning: Valid config keys have changed in V2:
             * 'orm_mode' has been renamed to 'from_attributes'
