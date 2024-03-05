@@ -114,16 +114,6 @@ ally in the local virtual environments.
     ❯ source venv/bin/activate
 
 
-install some necessary packages (2022) --> SUCCESSFUL | &#x2705; RECOMMANDED VERSION
-
-    ❯ pip install uvicorn==0.20.0 fastapi==0.88.0 
-
-    ❯ pip install SQLAlchemy==1.4.45
-
-    ❯ pip install psycopg2==2.9.5
-
-    ❯ pip install flask==2.2.2
-
 install some necessary packages (test with another version of fastapi) --> SUCCESSFUL | &#x2705; RECOMMANDED VERSION
 
     ❯ pip install uvicorn==0.27.1 fastapi==0.99.1    
