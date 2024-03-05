@@ -406,7 +406,8 @@ Basic project.
 
 
 notes :
-Jika menemukan error berikut saat menjalankan project lakukan deactivate virtual environment dan akses kembali source venv/bin/activate
+
+If you encounter the following error while running the project, deactivate the virtual environment and access the venv/bin/activate source again.
 
     . . .
     ModuleNotFoundError: No module named 'sqlalchemy'
