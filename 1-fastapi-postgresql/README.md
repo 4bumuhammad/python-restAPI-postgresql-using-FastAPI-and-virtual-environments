@@ -440,6 +440,10 @@ If you encounter the following error while running the project, deactivate the v
 
 - &#x1F536; book [get all book]
 
+<p align="center">
+    <img src="./gambar-petunjuk/ss_postman_001_book_get-all-book.png" alt="ss_postman_001_book_get-all-book" style="display: block; margin: 0 auto;">
+</p>
+
         curl --location 'http://localhost:8000/book/'
 
 
