@@ -129,28 +129,29 @@ install some necessary packages.
 notes : 
 
     ❯ pip list
-    Package           Version
-    ----------------- -------
-    anyio             4.3.0
-    click             8.1.7
-    exceptiongroup    1.2.0
-    fastapi           0.88.0
-    Flask             2.2.2
-    h11               0.14.0
-    idna              3.6
-    itsdangerous      2.1.2
-    Jinja2            3.1.3
-    MarkupSafe        2.1.5
-    pip               22.0.4
-    psycopg2          2.9.5
-    pydantic          1.10.14
-    setuptools        58.1.0
-    sniffio           1.3.1
-    SQLAlchemy        1.4.45
-    starlette         0.22.0
-    typing_extensions 4.10.0
-    uvicorn           0.20.0
-    Werkzeug          3.0.1
+
+        Package           Version
+        ----------------- -------
+        anyio             4.3.0
+        click             8.1.7
+        exceptiongroup    1.2.0
+        fastapi           0.88.0
+        Flask             2.2.2
+        h11               0.14.0
+        idna              3.6
+        itsdangerous      2.1.2
+        Jinja2            3.1.3
+        MarkupSafe        2.1.5
+        pip               22.0.4
+        psycopg2          2.9.5
+        pydantic          1.10.14
+        setuptools        58.1.0
+        sniffio           1.3.1
+        SQLAlchemy        1.4.45
+        starlette         0.22.0
+        typing_extensions 4.10.0
+        uvicorn           0.20.0
+        Werkzeug          3.0.1
 
 
 build a project folder and its files.
