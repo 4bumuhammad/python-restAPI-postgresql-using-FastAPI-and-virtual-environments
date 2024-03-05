@@ -429,6 +429,10 @@ If you encounter the following error while running the project, deactivate the v
 
 - &#x1F536; book [create book]
 
+<p align="center">
+    <img src="./gambar-petunjuk/ss_postman_002_book_create-book.png" alt="ss_postman_002_book_create-book" style="display: block; margin: 0 auto;">
+</p>
+
         curl --location 'http://localhost:8000/book/create' \
         --header 'Content-Type: application/json' \
         --data '{
@@ -449,9 +453,17 @@ If you encounter the following error while running the project, deactivate the v
 
 - &#x1F536; book [get by id book]
 
+<p align="center">
+    <img src="./gambar-petunjuk/ss_postman_003_book_get-by-id-book.png" alt="ss_postman_003_book_get-by-id-book" style="display: block; margin: 0 auto;">
+</p>
+
         curl --location 'http://localhost:8000/book/35'
 
 - &#x1F536; book [update book]
+
+<p align="center">
+    <img src="./gambar-petunjuk/ss_postman_004_book_update-book.png" alt="ss_postman_004_book_update-book" style="display: block; margin: 0 auto;">
+</p>
 
         curl --location --request PATCH 'http://localhost:8000/book/update' \
         --header 'Content-Type: application/json' \
@@ -464,6 +476,10 @@ If you encounter the following error while running the project, deactivate the v
         }'
 
 - &#x1F536; book [delete book]
+
+<p align="center">
+    <img src="./gambar-petunjuk/ss_postman_005_book_delete-book.png" alt="ss_postman_005_book_delete-book" style="display: block; margin: 0 auto;">
+</p>
 
         curl --location --request DELETE 'http://localhost:8000/book/35'
 
