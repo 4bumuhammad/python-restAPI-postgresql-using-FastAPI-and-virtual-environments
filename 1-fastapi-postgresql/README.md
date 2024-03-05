@@ -138,7 +138,7 @@ install some necessary packages (test with another version of fastapi / Jul 8, 2
 
     ❯ pip install uvicorn==0.27.1 fastapi==0.100.1    
 
-    notes : [fastapi] There are bugs in later versions of fastapi, so it is recommended to use this version or a level not further below it.
+        &#x1FAA7; notes : [fastapi] There are bugs in later versions of fastapi, so it is recommended to use this version or a level not further below it.
 
     ❯ pip install SQLAlchemy==2.0.28
 
