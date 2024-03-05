@@ -116,58 +116,42 @@ ally in the local virtual environments.
 
 install some necessary packages.
 
-    ❯ pip install uvicorn fastapi
+    ❯ pip install uvicorn==0.20.0 fastapi==0.88.0 
 
-    ❯ pip install sqlalchemy
+    ❯ pip install SQLAlchemy==1.4.45
 
-    ❯ pip install psycopg2
+    ❯ pip install psycopg2==2.9.5
 
-    ❯ pip install flask
-
----
-
-Notes:
-
-    # participants of the package uvicorn
-        Package           Version
-        ----------------- -------
-        click             8.1.7
-        h11               0.14.0
-        typing_extensions 4.10.0
-        uvicorn           0.27.1
-
-    # participants of the package fastapi
-        Package           Version
-        ----------------- -------
-        annotated-types   0.6.0
-        anyio             4.3.0
-        exceptiongroup    1.2.0
-        fastapi           0.110.0
-        idna              3.6
-        pydantic          2.6.3
-        pydantic_core     2.16.3
-        sniffio           1.3.1
-        starlette         0.36.3
-        typing_extensions 4.10.0
-
-    # participants of the package flask 
-        Package      Version
-        ------------ -------
-        blinker      1.7.0
-        click        8.1.7
-        Flask        3.0.2
-        itsdangerous 2.1.2
-        Jinja2       3.1.3
-        MarkupSafe   2.1.5
-        Werkzeug     3.0.1
-
-    # participants of the package sqlalchemy 
-        Package           Version
-        ----------------- -------
-        SQLAlchemy        2.0.28
-        typing_extensions 4.10.0
+    ❯ pip install flask==2.2.2
 
 ---
+
+notes : 
+
+    ❯ pip list
+    Package           Version
+    ----------------- -------
+    anyio             4.3.0
+    click             8.1.7
+    exceptiongroup    1.2.0
+    fastapi           0.88.0
+    Flask             2.2.2
+    h11               0.14.0
+    idna              3.6
+    itsdangerous      2.1.2
+    Jinja2            3.1.3
+    MarkupSafe        2.1.5
+    pip               22.0.4
+    psycopg2          2.9.5
+    pydantic          1.10.14
+    setuptools        58.1.0
+    sniffio           1.3.1
+    SQLAlchemy        1.4.45
+    starlette         0.22.0
+    typing_extensions 4.10.0
+    uvicorn           0.20.0
+    Werkzeug          3.0.1
+
 
 build a project folder and its files.
 

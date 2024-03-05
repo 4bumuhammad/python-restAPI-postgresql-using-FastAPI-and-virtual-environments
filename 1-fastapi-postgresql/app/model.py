@@ -1,6 +1,4 @@
-from ast import Str
-from turtle import title
-from sqlalchemy import Column, Integer, PrimaryKeyConstraint, String
+from sqlalchemy import Column, Integer, String
 from config import Base
 
 class Book(Base):
