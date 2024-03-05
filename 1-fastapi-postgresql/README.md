@@ -114,7 +114,7 @@ ally in the local virtual environments.
     ❯ source venv/bin/activate
 
 
-install some necessary packages.
+install some necessary packages (2022) --> SUCCESSFUL | &#x2705; RECOMMANDED VERSION
 
     ❯ pip install uvicorn==0.20.0 fastapi==0.88.0 
 
@@ -123,6 +123,26 @@ install some necessary packages.
     ❯ pip install psycopg2==2.9.5
 
     ❯ pip install flask==2.2.2
+
+install some necessary packages (test with another version / 2023) --> FAILED
+
+    ❯ pip install uvicorn==0.25.0 fastapi==0.108.0 
+
+    ❯ pip install SQLAlchemy==2.0.24
+
+    ❯ pip install psycopg2==2.9.9
+
+    ❯ pip install flask==3.0.0    
+
+install some necessary packages (test with another version / 2023) --> TEST
+
+    ❯ pip install uvicorn==0.21.0 fastapi==0.89.0    # 2023 awal
+
+    ❯ pip install SQLAlchemy==2.0.24
+
+    ❯ pip install psycopg2==2.9.9
+
+    ❯ pip install flask==3.0.0 
 
 ---
 
@@ -215,8 +235,8 @@ Basic project.
 
     from fastapi import FastAPI
 
-    from config import engine
     import model
+    from config import engine
     import router
 
     model.Base.metadata.create_all(bind=engine)
@@ -228,6 +248,7 @@ Basic project.
         return "Welcome Home | أهلاً بك في بيتك | 欢迎回家 | Добро пожаловать домой"
 
     app.include_router(router.router,prefix="/book",tags=["book"])
+
 
 
 #### &#x1F530; Code config.py :
@@ -243,11 +264,10 @@ Basic project.
     Base=declarative_base()
 
 
+
 #### &#x1F530; Code model.py :
 
-    from ast import Str
-    from turtle import title
-    from sqlalchemy import Column, Integer, PrimaryKeyConstraint, String
+    from sqlalchemy import Column, Integer, String
     from config import Base
 
     class Book(Base):
@@ -256,11 +276,11 @@ Basic project.
         id=Column(Integer, primary_key=True)
         title=Column(String)
         description=Column(String)
+    
         
 
 #### &#x1F530; Code schemas.py :
 
-    from inspect import Parameter
     from typing import List, Optional, Generic, TypeVar
     from pydantic import BaseModel,Field
     from pydantic.generics import GenericModel
@@ -285,11 +305,10 @@ Basic project.
         result: Optional[T]
 
 
+
+
 #### &#x1F530; Code crud.py :
 
-    import imp
-    from turtle import title
-    from flask import session
     from sqlalchemy.orm import Session
     from model import Book
     from schemas import BookSchema
@@ -324,6 +343,8 @@ Basic project.
         db.commit()
         db.refresh(_book)
         return _book
+
+
 
 
 #### &#x1F530; Code routes.py :
@@ -371,6 +392,9 @@ Basic project.
         crud.remove_book(db,book_id=id)
         return Response(code=200, status="OK", message="Success delete data").dict(exclude_none=True)
     
+    
+
+
 ---
 
 #### &#x1F3C4; Run project
@@ -386,6 +410,20 @@ Basic project.
             * 'orm_mode' has been renamed to 'from_attributes'
             warnings.warn(message, UserWarning)
             INFO:     Started server process [5363]
+            INFO:     Waiting for application startup.
+            INFO:     Application startup complete.
+
+---
+
+            INFO:     Will watch for changes in these directories: ['/Users/.../python-restAPI-postgresql-using-FastAPI-and-virtual-environments/1-fastapi-postgresql/app']
+            INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+            INFO:     Started reloader process [14386] using StatReload
+            /Users/.../from-github-all/python-restAPI-postgresql-using-FastAPI-and-virtual-environments/venv/lib/python3.10/site-packages/pydantic/_migration.py:283: UserWarning: `pydantic.generics:GenericModel` has been moved to `pydantic.BaseModel`.
+            warnings.warn(f'`{import_path}` has been moved to `{new_location}`.')
+            /Users/.../python-restAPI-postgresql-using-FastAPI-and-virtual-environments/venv/lib/python3.10/site-packages/pydantic/_internal/_config.py:322: UserWarning: Valid config keys have changed in V2:
+            * 'orm_mode' has been renamed to 'from_attributes'
+            warnings.warn(message, UserWarning)
+            INFO:     Started server process [14388]
             INFO:     Waiting for application startup.
             INFO:     Application startup complete.
 
