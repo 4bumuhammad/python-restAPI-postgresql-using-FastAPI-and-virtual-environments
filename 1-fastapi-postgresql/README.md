@@ -405,6 +405,13 @@ Basic project.
             INFO:     Application startup complete.
 
 
+notes :
+Jika menemukan error berikut saat menjalankan project lakukan deactivate virtual environment dan akses kembali source venv/bin/activate
+
+    . . .
+    ModuleNotFoundError: No module named 'sqlalchemy'
+
+
 
 <p align="center">
     <img src="./gambar-petunjuk/ss_001_fastapi-book-swagger.png" alt="ss_001_fastapi-book-swagger" style="display: block; margin: 0 auto;">
