@@ -405,7 +405,7 @@ Basic project.
             INFO:     Application startup complete.
 
 
-notes :
+&#x1FAA7; notes :
 
 If you encounter the following error while running the project, deactivate the virtual environment and access the venv/bin/activate source again.
 
