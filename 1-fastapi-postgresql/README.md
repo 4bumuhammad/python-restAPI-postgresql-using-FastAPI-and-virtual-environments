@@ -215,6 +215,8 @@ Basic project.
 
 &#x1F6A7; continue with the next code development.
 
+## BOOK
+
 #### &#x1F530; Code main.py :
 
     from fastapi import FastAPI
@@ -493,3 +495,5 @@ If you encounter the following error while running the project, deactivate the v
     <img src="./gambar-petunjuk/ss_001_fastapi-book-swagger.png" alt="ss_001_fastapi-book-swagger" style="display: block; margin: 0 auto;">
 </p>
 <p align="center">Swagger | Browser http://localhost:8000/docs</p>
+
+---
