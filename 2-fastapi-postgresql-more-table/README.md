@@ -531,12 +531,23 @@ If you encounter the following error while running the project, deactivate the v
     <img src="./gambar-petunjuk/ss_under-construction.png" alt="ss_under-construction" style="display: block; margin: 0 auto;">
 </p>
 
+    curl --location 'http://localhost:8000/library/create' \
+    --header 'Content-Type: application/json' \
+    --data '{
+        "parameter":{
+            "name":"Library 1",
+            "country": "country 1"
+        }
+    }'
 
 - &#x1F536; library [get all library]
+
 
 <p align="center">
     <img src="./gambar-petunjuk/ss_under-construction.png" alt="ss_under-construction" style="display: block; margin: 0 auto;">
 </p>
+
+    curl --location 'http://localhost:8000/library/'
 
 
 - &#x1F536; library [get by id library]
@@ -545,6 +556,8 @@ If you encounter the following error while running the project, deactivate the v
     <img src="./gambar-petunjuk/ss_under-construction.png" alt="ss_under-construction" style="display: block; margin: 0 auto;">
 </p>
 
+    curl --location 'http://localhost:8000/library/5'
+
 
 - &#x1F536; library [update library]
 
@@ -552,6 +565,15 @@ If you encounter the following error while running the project, deactivate the v
     <img src="./gambar-petunjuk/ss_under-construction.png" alt="ss_under-construction" style="display: block; margin: 0 auto;">
 </p>
 
+    curl --location --request PATCH 'http://localhost:8000/library/update' \
+    --header 'Content-Type: application/json' \
+    --data '{
+        "parameter":{
+            "id": 5,
+            "name":"Library 2",
+            "country": "country 2"
+        }
+    }'
 
 - &#x1F536; library [delete library]
 
@@ -559,7 +581,7 @@ If you encounter the following error while running the project, deactivate the v
     <img src="./gambar-petunjuk/ss_under-construction.png" alt="ss_under-construction" style="display: block; margin: 0 auto;">
 </p>
 
-
+    curl --location --request DELETE 'http://localhost:8000/library/5'
 
 
 
