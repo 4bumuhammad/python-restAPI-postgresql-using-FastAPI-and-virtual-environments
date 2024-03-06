@@ -343,11 +343,37 @@ If you encounter the following error while running the project, deactivate the v
 
 ---
 
+
+
 - &#x1F537; Documentation [Swagger API]
 
 <p align="center">
     <img src="./gambar-petunjuk/ss_001_fastapi-book-library-swagger.png" alt="ss_001_fastapi-book-library-swagger" style="display: block; margin: 0 auto;">
 </p>
 
+
+
+- &#x1FAA7; notes :
+
+        ❯ uvicorn main:app --reload
+
+            INFO:     Will watch for changes in these directories: ['/Users/.../python-restAPI-postgresql-using-FastAPI-and-virtual-environments/2-fastapi-postgresql-more-table/app']
+            INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+            INFO:     Started reloader process [81578] using StatReload
+            INFO:     Started server process [81602]
+            INFO:     Waiting for application startup.
+            INFO:     Application startup complete.
+            INFO:     127.0.0.1:51413 - "GET /library/ HTTP/1.1" 200 OK
+            INFO:     127.0.0.1:51413 - "GET /library/ HTTP/1.1" 200 OK
+            INFO:     127.0.0.1:51413 - "POST /library/create HTTP/1.1" 200 OK
+            INFO:     127.0.0.1:51413 - "GET /library/1 HTTP/1.1" 200 OK
+            INFO:     127.0.0.1:51502 - "GET /library/ HTTP/1.1" 200 OK
+            INFO:     127.0.0.1:51547 - "PATCH /library/update HTTP/1.1" 200 OK
+            INFO:     127.0.0.1:51579 - "GET /library/ HTTP/1.1" 200 OK
+            INFO:     127.0.0.1:51579 - "GET /library/ HTTP/1.1" 200 OK
+            INFO:     127.0.0.1:51626 - "GET /library/4 HTTP/1.1" 200 OK
+            INFO:     127.0.0.1:51663 - "DELETE /library/4 HTTP/1.1" 200 OK
+            INFO:     127.0.0.1:52013 - "GET /docs HTTP/1.1" 200 OK
+            INFO:     127.0.0.1:52013 - "GET /openapi.json HTTP/1.1" 200 OK
 
 ---
