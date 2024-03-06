@@ -342,7 +342,7 @@ If you encounter the following error while running the project, deactivate the v
 
 ---
 
-- &#x1F537; Documentation [Swagger]
+- &#x1F537; Documentation [Swagger API]
 
 <p align="center">
     <img src="./gambar-petunjuk/ss_under-construction.png" alt="ss_under-construction" style="display: block; margin: 0 auto;">
