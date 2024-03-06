@@ -485,7 +485,7 @@ Here are the results of running the project if using the latest version or from 
 
         ❯ uvicorn main:app --reload
 
-            INFO:     Will watch for changes in these directories: ['/Users/.../python-restAPI-postgresql-using-FastAPI-and-virtual-environments/1-fastapi-postgresql/app']
+            INFO:     Will watch for changes in these directories: ['/Users/.../python-restAPI-postgresql-using-FastAPI-and-virtual-environments/2-fastapi-postgresql-more-table/app']
             INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
             INFO:     Started reloader process [14386] using StatReload
             /Users/.../python-restAPI-postgresql-using-FastAPI-and-virtual-environments/venv/lib/python3.10/site-packages/pydantic/_migration.py:283: UserWarning: `pydantic.generics:GenericModel` has been moved to `pydantic.BaseModel`.
@@ -503,7 +503,7 @@ Here are the results of running the project if using the recommended version of 
 
         ❯ uvicorn main:app --reload
 
-            INFO:     Will watch for changes in these directories: ['/Users/.../python-restAPI-postgresql-using-FastAPI-and-virtual-environments/1-fastapi-postgresql/app']
+            INFO:     Will watch for changes in these directories: ['/Users/.../python-restAPI-postgresql-using-FastAPI-and-virtual-environments/2-fastapi-postgresql-more-table/app']
             INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
             INFO:     Started reloader process [95230] using StatReload
             INFO:     Started server process [95232]
