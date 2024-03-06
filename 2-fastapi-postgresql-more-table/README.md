@@ -528,7 +528,7 @@ If you encounter the following error while running the project, deactivate the v
 - &#x1F536; library [create library]
 
 <p align="center">
-    <img src="./gambar-petunjuk/ss_under-construction.png" alt="ss_under-construction" style="display: block; margin: 0 auto;">
+    <img src="./gambar-petunjuk/ss_postman_001_library_create-library.png" alt="ss_postman_001_library_create-library" style="display: block; margin: 0 auto;">
 </p>
 
     curl --location 'http://localhost:8000/library/create' \
@@ -544,7 +544,7 @@ If you encounter the following error while running the project, deactivate the v
 
 
 <p align="center">
-    <img src="./gambar-petunjuk/ss_under-construction.png" alt="ss_under-construction" style="display: block; margin: 0 auto;">
+    <img src="./gambar-petunjuk/ss_postman_002_library_get-all-library.png" alt="ss_postman_002_library_get-all-library" style="display: block; margin: 0 auto;">
 </p>
 
     curl --location 'http://localhost:8000/library/'
@@ -553,7 +553,7 @@ If you encounter the following error while running the project, deactivate the v
 - &#x1F536; library [get by id library]
 
 <p align="center">
-    <img src="./gambar-petunjuk/ss_under-construction.png" alt="ss_under-construction" style="display: block; margin: 0 auto;">
+    <img src="./gambar-petunjuk/ss_postman_003_library_get-by-id-library.png" alt="ss_postman_003_library_get-by-id-library" style="display: block; margin: 0 auto;">
 </p>
 
     curl --location 'http://localhost:8000/library/5'
@@ -562,7 +562,7 @@ If you encounter the following error while running the project, deactivate the v
 - &#x1F536; library [update library]
 
 <p align="center">
-    <img src="./gambar-petunjuk/ss_under-construction.png" alt="ss_under-construction" style="display: block; margin: 0 auto;">
+    <img src="./gambar-petunjuk/ss_postman_004_library_update-library.png" alt="ss_postman_004_library_update-library" style="display: block; margin: 0 auto;">
 </p>
 
     curl --location --request PATCH 'http://localhost:8000/library/update' \
@@ -578,7 +578,7 @@ If you encounter the following error while running the project, deactivate the v
 - &#x1F536; library [delete library]
 
 <p align="center">
-    <img src="./gambar-petunjuk/ss_under-construction.png" alt="ss_under-construction" style="display: block; margin: 0 auto;">
+    <img src="./gambar-petunjuk/ss_postman_005_library_delete-library.png" alt="ss_postman_005_library_delete-library" style="display: block; margin: 0 auto;">
 </p>
 
     curl --location --request DELETE 'http://localhost:8000/library/5'
