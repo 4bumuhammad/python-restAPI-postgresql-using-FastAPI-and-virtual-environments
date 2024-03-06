@@ -13,5 +13,5 @@ async def Home():
     return "Welcome Home"
 
 
-# app.include_router(router.router,prefix="/book",tags=["book"])
+app.include_router(router.router,prefix="/book",tags=["book"])
 app.include_router(router.router_library,prefix="/library",tags=["library"])

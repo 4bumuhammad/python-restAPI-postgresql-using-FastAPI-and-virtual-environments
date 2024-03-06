@@ -224,7 +224,6 @@ Basic project.
 
 
 
-
 #### &#x1F530; Code config.py :
 
 
@@ -347,7 +346,7 @@ If you encounter the following error while running the project, deactivate the v
 - &#x1F537; Documentation [Swagger API]
 
 <p align="center">
-    <img src="./gambar-petunjuk/ss_under-construction.png" alt="ss_under-construction" style="display: block; margin: 0 auto;">
+    <img src="./gambar-petunjuk/ss_001_fastapi-book-library-swagger.png" alt="ss_001_fastapi-book-library-swagger" style="display: block; margin: 0 auto;">
 </p>
 
 

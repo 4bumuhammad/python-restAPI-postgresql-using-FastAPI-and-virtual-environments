@@ -4,16 +4,16 @@ from pydantic.generics import GenericModel
 
 T=TypeVar('T')
 
-# class BookSchema(BaseModel):
-#     id:Optional[int]=None
-#     title:Optional[str]=None
-#     description:Optional[str]=None
+class BookSchema(BaseModel):
+    id:Optional[int]=None
+    title:Optional[str]=None
+    description:Optional[str]=None
 
-#     class Config:
-#         orm_mode=True
+    class Config:
+        orm_mode=True
 
-# class RequestBook(BaseModel):
-#     parameter: BookSchema=Field(...)
+class RequestBook(BaseModel):
+    parameter: BookSchema=Field(...)
 
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
