@@ -206,6 +206,8 @@ Basic project.
 </p>
 <p align="center">Main | Browser http://localhost:8000</p>
 
+- &#x1F537; Documentation [Swagger API]
+
 <p align="center">
     <img src="./gambar-petunjuk/ss_001_fastapi-1-swagger.png" alt="ss_001_fastapi-1-swagger" style="display: block; margin: 0 auto;">
 </p>
