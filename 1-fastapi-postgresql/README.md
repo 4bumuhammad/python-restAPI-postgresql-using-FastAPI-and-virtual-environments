@@ -500,3 +500,20 @@ If you encounter the following error while running the project, deactivate the v
 <p align="center">Swagger | Browser http://localhost:8000/docs</p>
 
 ---
+
+- &#x1FAA7; notes :
+
+        ❯ uvicorn main:app --reload
+
+            INFO:     Will watch for changes in these directories: ['/Users/.../python-restAPI-postgresql-using-FastAPI-and-virtual-environments/1-fastapi-postgresql/app']
+            INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+            INFO:     Started reloader process [16010] using StatReload
+            INFO:     Started server process [16013]
+            INFO:     Waiting for application startup.
+            INFO:     Application startup complete.
+            INFO:     127.0.0.1:51048 - "GET /book/ HTTP/1.1" 200 OK
+            INFO:     127.0.0.1:51048 - "POST /book/create HTTP/1.1" 200 OK
+            INFO:     127.0.0.1:51048 - "GET /book/ HTTP/1.1" 200 OK
+            INFO:     127.0.0.1:51073 - "GET /book/53 HTTP/1.1" 200 OK
+            INFO:     127.0.0.1:51088 - "PATCH /book/update HTTP/1.1" 200 OK
+            INFO:     127.0.0.1:51103 - "DELETE /book/53 HTTP/1.1" 200 OK
