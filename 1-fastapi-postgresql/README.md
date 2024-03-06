@@ -114,7 +114,7 @@ ally in the local virtual environments.
     ❯ source venv/bin/activate
 
 
-install some necessary packages (test with another version of fastapi) --> SUCCESSFUL | &#x2705; RECOMMANDED VERSION
+install some necessary packages (test with another version of fastapi) --> SUCCESSFUL | &#x2705; RECOMMENDED VERSION
 
     ❯ pip install uvicorn==0.27.1 fastapi==0.99.1    
 
