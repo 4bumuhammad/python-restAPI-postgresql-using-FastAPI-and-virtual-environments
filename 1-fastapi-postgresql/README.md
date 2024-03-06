@@ -490,6 +490,7 @@ If you encounter the following error while running the project, deactivate the v
 
 ---
 
+- &#x1F537; Documentation [Swagger]
 
 <p align="center">
     <img src="./gambar-petunjuk/ss_001_fastapi-book-swagger.png" alt="ss_001_fastapi-book-swagger" style="display: block; margin: 0 auto;">
