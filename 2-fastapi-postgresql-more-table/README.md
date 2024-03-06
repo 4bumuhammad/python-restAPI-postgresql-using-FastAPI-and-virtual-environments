@@ -193,12 +193,12 @@ Basic project.
 
         ❯ uvicorn main:app --reload
 
-            INFO:     Will watch for changes in these directories: ['/Users/.../python-restAPI-postgresql-using-FastAPI-and-virtualenv/1-fastapi-postgresql/app']
+            INFO:     Will watch for changes in these directories: ['/Users/.../python-restAPI-postgresql-using-FastAPI-and-virtual-environments/2-fastapi-postgresql-more-table/app']
             INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
-            INFO:     Started reloader process [98301] using StatReload
-            INFO:     Started server process [98303]
+            INFO:     Started reloader process [81578] using StatReload
+            INFO:     Started server process [81602]
             INFO:     Waiting for application startup.
-            INFO:     Application startup complete.            
+            INFO:     Application startup complete.
 
 
 <p align="center">
@@ -221,36 +221,258 @@ Basic project.
 
 #### &#x1F530; Code main.py :
 
+    from fastapi import FastAPI
+    import model
+    from config import engine
+    import router
+
+    model.Base.metadata.create_all(bind=engine)
+
+
+    app=FastAPI()
+
+    @app.get('/')
+    async def Home():
+        return "Welcome Home"
+
+
+    app.include_router(router.router,prefix="/book",tags=["book"])
+    app.include_router(router.router_library,prefix="/library",tags=["library"])
 
 
 
 #### &#x1F530; Code config.py :
 
+    from sqlalchemy import create_engine
+    from sqlalchemy.orm import sessionmaker
+    from sqlalchemy.ext.declarative import declarative_base
+
+    DATABASE_URL="postgresql://postgres:postgres@192.168.100.225:5432/python_db"
+
+    engine=create_engine(DATABASE_URL)
+    SessionLocal=sessionmaker(autocommit=False,autoflush=False,bind=engine)
+    Base=declarative_base()
 
 
 
 #### &#x1F530; Code model.py :
 
-    
+    from sqlalchemy import Column, Integer, String
+    from config import Base
+
+    class Book(Base):
+        __tablename__='book'
+
+        id=Column(Integer, primary_key=True)
+        title=Column(String)
+        description=Column(String)
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    class Library(Base):
+        __tablename__='library'
+
+        id=Column(Integer,primary_key=True)
+        name=Column(String)
+        country=Column(String)    
         
 
 #### &#x1F530; Code schemas.py :
 
+    from typing import List, Optional, Generic, TypeVar
+    from pydantic import BaseModel,Field
+    from pydantic.generics import GenericModel
+
+    T=TypeVar('T')
+
+    class BookSchema(BaseModel):
+        id:Optional[int]=None
+        title:Optional[str]=None
+        description:Optional[str]=None
+
+        class Config:
+            orm_mode=True
+
+    class RequestBook(BaseModel):
+        parameter: BookSchema=Field(...)
 
 
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    class LibrarySchema(BaseModel):
+        id:Optional[int]=None
+        name:Optional[str]=None
+        country:Optional[str]=None
+
+        class Config:
+            orm_mode=True
+
+    class RequestLibrary(BaseModel):
+        parameter: LibrarySchema=Field(...)
+
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+    class Response(GenericModel, Generic[T]):
+        code: str
+        status: str
+        message: str
+        result: Optional[T]
 
 
 
 #### &#x1F530; Code crud.py :
 
+    from sqlalchemy.orm import Session
+
+    from model import Book
+    from model import Library
+
+    from schemas import BookSchema
+    from schemas import LibrarySchema
 
 
+
+    # Get All book data
+    def get_book(db:Session,skip:int=0,limit:int=100):
+        return db.query(Book).offset(skip).limit(limit).all()
+
+    # Get by id book data
+    def get_book_by_id(db:Session,book_id:int):
+        return db.query(Book).filter(Book.id==book_id).first()
+
+    # Create book data
+    def create_book(db:Session,book: BookSchema):
+        _book=Book(title=book.title, description=book.description)
+        db.add(_book)
+        db.commit()
+        db.refresh(_book)
+        return _book
+
+    # Remove book data
+    def remove_book(db:Session,book_id:int):
+        _book=get_book_by_id(db=db,book_id=book_id)
+        db.delete(_book)
+        db.commit()
+
+    # Update book data
+    def update_book(db:Session,book_id:int,title:str,description:str):
+        _book=get_book_by_id(db=db,book_id=book_id)
+        _book.title=title
+        _book.description=description
+        db.commit()
+        db.refresh(_book)
+        return _book
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    # Get All library data
+    def get_library(db:Session,skip:int=0,limit:int=100):
+        return db.query(Library).offset(skip).limit(limit).all()
+
+    # Get by id library data
+    def get_library_by_id(db:Session,library_id:int):
+        return db.query(Library).filter(Library.id==library_id).first()
+
+    # Create library data
+    def create_library(db:Session,library: LibrarySchema):
+        _library=Library(name=library.name,country=library.country)
+        db.add(_library)
+        db.commit()
+        db.refresh(_library)
+        return _library
+
+    # Remove library data
+    def remove_library(db:Session,library_id:int):
+        _library=get_library_by_id(db=db,library_id=library_id)
+        db.delete(_library)
+        db.commit()
+
+    # Update library data
+    def update_library(db:Session, library_id:int,name:str,country:str):
+        _library=get_library_by_id(db=db,library_id=library_id)
+        _library.name=name
+        _library.country=country
+        db.commit()
+        db.refresh(_library)
+        return _library
 
 
 
 #### &#x1F530; Code routes.py :
 
+    from fastapi import APIRouter, HTTPException, Path, Depends
+    from config import SessionLocal
+    from sqlalchemy.orm import Session
+    from schemas import BookSchema,RequestBook,Response
+    from schemas import LibrarySchema, RequestLibrary, Response
+    import crud
 
+    router=APIRouter()
+    router_library=APIRouter()
+
+    def get_db():
+        db=SessionLocal()
+        try:
+            yield db
+        finally:
+            db.close()
+
+    @router.post('/create')
+    async def create(request:RequestBook,db:Session=Depends(get_db)):
+        crud.create_book(db,request.parameter)
+        return Response(code=200,status="OK",message="Book created successfully").dict(exclude_none=True)
+
+    @router.get("/")
+    async def get(db:Session=Depends(get_db)):
+        _book=crud.get_book(db,0,100)
+        return Response(code=200,status="OK",message="Success Fetch all data",result=_book).dict(exclude_none=True)
+
+
+    @router.get("/{id}")
+    async def get_by_id(id:int,db:Session=Depends(get_db)):
+        _book=crud.get_book_by_id(db,id)
+        return Response(code=200,status="OK", message="Success get data", result=_book).dict(exclude_none=True)
+
+
+    @router.patch("/update")
+    async def update_book(request:RequestBook, db:Session=Depends(get_db)):
+        _book=crud.update_book(db,book_id=request.parameter.id,title=request.parameter.title, description=request.parameter.description)
+        return Response(code=200,status="OK",message="Success update data",result=_book)
+
+
+    @router.delete("/{id}")
+    async def delete(id:int,db:Session=Depends(get_db)):
+        crud.remove_book(db,book_id=id)
+        return Response(code=200, status="OK", message="Success delete data").dict(exclude_none=True)
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    @router_library.post("/create")
+    async def create(request:RequestLibrary,db:Session=Depends(get_db)):
+        crud.create_library(db,request.parameter)
+        return Response(code=200,status="OK",message="Library created successfully").dict(exclude_none=True)
+
+    @router_library.get("/{id}")
+    async def get_by_id(id:int,db:Session=Depends(get_db)):
+        _library=crud.get_library_by_id(db,id)
+        return Response(code=200,status="OK",message="Success get data", result=_library).dict(exclude_none=True)
+
+    @router_library.get("/")
+    async def get(db:Session=Depends(get_db)):
+        _library=crud.get_library(db,0,100)
+        return Response(code=200,status="OK",message="Success Fetch all data", result=_library).dict(exclude_none=True)
+
+    @router_library.patch("/update")
+    async def update_library(request:RequestLibrary, db:Session=Depends(get_db)):
+        _library=crud.update_library(db,library_id=request.parameter.id,name=request.parameter.name,country=request.parameter.country)
+        return Response(code=200,status="OK",message="Success update data", result=_library)
+
+    @router_library.delete("/{id}")
+    async def delete(id:int,db:Session=Depends(get_db)):
+        crud.remove_library(db,library_id=id)
+        return Response(code=200,status="OK",message="Success delete data").dict(exclude_none=True)
     
     
 
