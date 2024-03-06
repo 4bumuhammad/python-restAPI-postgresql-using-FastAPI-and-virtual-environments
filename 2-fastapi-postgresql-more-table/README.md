@@ -303,35 +303,35 @@ If you encounter the following error while running the project, deactivate the v
 
 ### &#x1F31F; CURL : 
 
-- &#x1F536; book [create library]
+- &#x1F536; library [create library]
 
 <p align="center">
     <img src="./gambar-petunjuk/ss_under-construction.png" alt="ss_under-construction" style="display: block; margin: 0 auto;">
 </p>
 
 
-- &#x1F536; book [get all book]
+- &#x1F536; library [get all library]
 
 <p align="center">
     <img src="./gambar-petunjuk/ss_under-construction.png" alt="ss_under-construction" style="display: block; margin: 0 auto;">
 </p>
 
 
-- &#x1F536; book [get by id book]
+- &#x1F536; library [get by id library]
 
 <p align="center">
     <img src="./gambar-petunjuk/ss_under-construction.png" alt="ss_under-construction" style="display: block; margin: 0 auto;">
 </p>
 
 
-- &#x1F536; book [update book]
+- &#x1F536; library [update library]
 
 <p align="center">
     <img src="./gambar-petunjuk/ss_under-construction.png" alt="ss_under-construction" style="display: block; margin: 0 auto;">
 </p>
 
 
-- &#x1F536; book [delete book]
+- &#x1F536; library [delete library]
 
 <p align="center">
     <img src="./gambar-petunjuk/ss_under-construction.png" alt="ss_under-construction" style="display: block; margin: 0 auto;">
