@@ -11,5 +11,5 @@
 ---
 
 <div align="left">
-   &#x1FAA2; <a href="./2-fastapi-postgresql more table">Link to view entire 2-fastapi-postgresql more table</a>
+   &#x1FAA2; <a href="./2-fastapi-postgresql-more-table">Link to view entire 2-fastapi-postgresql-more-table</a>
 </div>
